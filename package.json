@@ -2,9 +2,13 @@
   "name": "state-util",
   "version": "0.0.0",
   "description": "Utility Functions for Managing State",
-  "main": "index.js",
+  "main": "./src",
   "scripts": {
-    "demo": "http-server"
+    "build-old": "webpack --config=webpack.config.js --mode=production",
+    "dev-old": "webpack --config=webpack.config.js --mode=development --watch",
+    "dev": "for fp in ./src/*; do if [[ -f $fp ]]; then watchify $fp -o ./dist/$(basename $fp) -v & fi done",
+    "build": "for fp in ./src/*; do if [[ -f $fp ]]; then browserify $fp -o ./dist/$(basename $fp) -v & fi done",
+    "test": "npm run dev && http-server"
   },
   "repository": {
     "type": "git",
@@ -20,6 +24,13 @@
   },
   "homepage": "https://github.com/DanielJDufour/state-util#readme",
   "devDependencies": {
-    "http-server": "^0.12.3"
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "browserify": "^16.5.2",
+    "http-server": "^0.12.3",
+    "watchify": "^3.11.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }

@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="./write-state-entry-to-element.js"></script>
+        <script src="/dist/write-state-entry-to-element.js"></script>
         <script>
-            var appState = {};
-
             function changeColor(color) {
-                appState.color = color;
-                writeStateEntryToElement('color', color, { element: document.body });
+                writeStateEntryToElement({ debug: true, key: 'color', value: color, element: document.body });
             }
         </script>
         <style>

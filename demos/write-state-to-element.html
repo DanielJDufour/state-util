@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="/dist/write-state-to-element.js"></script>
+        <script>
+            window.appState = {};
+
+            function saveState() {
+                writeStateToElement({ debug: true, state: appState, element: document.body });
+            }
+
+            function changeVehicle(vehicle) {
+                appState.vehicle = vehicle;
+                saveState();
+            }
+
+            function changeColor(color) {
+                appState.color = color;
+                saveState();
+            }
+        </script>
+        <style>
+            #selection { height: 100px; margin-top: 25px; width: 100px; }
+
+            [data-state-color="red"] #selection { background: red; }
+            [data-state-color="blue"] #selection { background: blue; }
+
+            [data-state-vehicle="car"] #selection { -webkit-mask-image: url('./img/car-solid.svg'); }
+            [data-state-vehicle="truck"] #selection { -webkit-mask-image: url('./img/truck-solid.svg'); height: 80px; }
+
+        </style>
+    </head>
+    <body>
+        <div id="write-state-to-element-example">
+            <h1><b>writeStateToElement</b> Example</h1>
+            <select onChange="changeVehicle(this.value)">
+                <option>Select a Vehicle</option>
+                <option value="car">Car</option>
+                <option value="truck">Truck</option>
+            </select>   
+            <select onChange="changeColor(this.value)">
+                <option>Select a Color</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+            </select>
+            <br/>
+            <div id="selection">
+            </div>
+        </div>
+    </body>
+</html>
