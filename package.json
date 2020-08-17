@@ -1,0 +1,25 @@
+{
+  "name": "state-util",
+  "version": "0.0.0",
+  "description": "Utility Functions for Managing State",
+  "main": "index.js",
+  "scripts": {
+    "demo": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielJDufour/state-util.git"
+  },
+  "keywords": [
+    "state"
+  ],
+  "author": "Daniel J. Dufour",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/DanielJDufour/state-util/issues"
+  },
+  "homepage": "https://github.com/DanielJDufour/state-util#readme",
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}

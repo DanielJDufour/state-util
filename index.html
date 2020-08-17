@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="./write-state-entry-to-element.js"></script>
+        <script>
+            var appState = {};
+
+            function changeColor(color) {
+                appState.color = color;
+                writeStateEntryToElement('color', color, { element: document.body });
+            }
+        </script>
+        <style>
+            [data-state-color="red"] #write-state-entry-to-element-example { background: red; }
+            [data-state-color="green"] #write-state-entry-to-element-example { background: green; }
+            [data-state-color="blue"] #write-state-entry-to-element-example { background: blue; }
+        </style>
+    </head>
+    <body>
+        <div id="write-state-entry-to-element-example">
+            <h1><b>writeStateEntryToElement</b> Example</h1>
+            <select onChange="changeColor(this.value)">
+                <option>Select a Color</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+        </div>
+    </body>
+</html>
