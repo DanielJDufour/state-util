@@ -4,8 +4,8 @@
   "description": "Utility Functions for Managing State",
   "main": "./src",
   "files": [
-    "./src/*",
-    "./dist/*"
+    "src/",
+    "dist/"
   ],
   "scripts": {
     "build-old": "webpack --config=webpack.config.js --mode=production",
