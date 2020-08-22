@@ -1,6 +1,6 @@
 {
   "name": "state-util",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Utility Functions for Managing State",
   "main": "./src",
   "files": [
@@ -12,7 +12,8 @@
     "dev-old": "webpack --config=webpack.config.js --mode=development --watch",
     "dev": "for fp in ./src/*; do if [[ -f $fp ]]; then watchify $fp -o ./dist/$(basename $fp) -v & fi done",
     "build": "for fp in ./src/*; do if [[ -f $fp ]]; then browserify $fp -o ./dist/$(basename $fp) -v & fi done",
-    "test": "npm run dev && http-server"
+    "test": "npm run dev && http-server",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
